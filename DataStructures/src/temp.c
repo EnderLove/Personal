@@ -13,7 +13,7 @@ int tempTest() {
 
     struct Node *head = NULL;
 
-    printf("Generate random LL or manual LL? 1/0: "); // Decide if work with a  random value list or not
+    printf("Generate random list or manual list 1/0: "); // Decide if work with a  random value list or not
     userInput = getInputUint8();
 
     if (userInput == 1) {
@@ -35,11 +35,10 @@ int tempTest() {
     while (userInput != 5) {
         system(CLEAR);
 
-        printf("\n\n\t========================== LINKED LIST TESTING ==========================\n\n");
+        printf("\n\n\t================== LIST TESTING ===================\n\n");
         printList(&head);
 
-        printf("\n===== OPTIONS =====\n1)Add Node\n2)Delete Node\n3)Sort "
-               "List\n4)Regen List\n5)Exit\n");
+        printf("\n===== OPTIONS =====\n1)Add Value\n2)Delete Value\n3)Sort List\n4)Regen List\n5)Exit\n");
         userInput = getInputUint8();
 
         switch (userInput) {
@@ -78,7 +77,7 @@ int tempTest() {
 
             case 5:
                 freeList(head);
-                printf("Linked List Free!\n");
+                printf("List Free!\n");
                 break;
 
             default:

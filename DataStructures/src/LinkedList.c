@@ -164,8 +164,7 @@ int linkedListTest() {
         printf("\n\n\t========================== LINKED LIST TESTING ==========================\n\n");
         printList(&head);
 
-        printf("\n===== OPTIONS =====\n1)Add Node\n2)Delete Node\n3)Sort "
-               "List\n4)Regen List\n5)Exit\n");
+        printf("\n===== OPTIONS =====\n1)Add Node\n2)Delete Node\n3)Sort List\n4)Regen List\n5)Exit\n");
         userInput = getInputUint8();
 
         switch (userInput) {
