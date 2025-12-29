@@ -14,4 +14,4 @@
 
 8. Abstract data types are just our knowledge of what a data structure does instead of how it works.
 
-9. Arrays: Easy search; Hard insert because of fixed size. Linked list: Easy insert, delete; Hard search requires more memory. Stack: Can be implemented using linked lists and give us control of the top most element but it doesn't let us work with other elements below the top until we erase it. Queue: Similar to stacks but instead of LIFO it uses FIFO and requires control of over and under flow. Trees:  
+9. Arrays: Easy search; Hard insert because of fixed size. Linked list: Easy insert, delete; Hard search requires more memory. Stack: Can be implemented using linked lists and give us control of the top most element but it doesn't let us work with other elements below the top until we erase it. Queue: Similar to stacks but instead of LIFO it uses FIFO and requires control of over and under flow. Trees: Trees provide quick search, insert and delete operations but the deletion algorithm is complicated. Graphs:   
