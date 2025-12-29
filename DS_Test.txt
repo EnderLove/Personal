@@ -1,0 +1,17 @@
+1. The features of a good program are that it should run correctly, easy to read and understand, easy to debug and modify.
+
+2. Data: Data is a value or set of values... File: Files are collections of records. Record: This is a collection of data such as (address, name, ID...etc) Primary key: This is a unique identifier to search between the data.
+
+3. A data structure is a way to organize data to make programs efficient, like a graph that can give us access to random data without going node by node or a linked list that allows as to insert or delete nodes without moving other nodes.
+
+4. There are primitive data structures and non-primitive data structures that are composed by primitive data structures and also the non-primitive data structures are divided by linear and non-linear data structures.
+
+5. The application of data structures is a primordial tool for making programs efficient because the good use of them let us organize, operate and access data in optimal forms.
+
+6. Data structures can insert, delete, and search.
+
+7. An array is a list of a same data type stored in a consecutive way in the stack, that make it easy to search for a value but not for inserting and deleting, but a linked list is a list of a same data type that is dynamically and not consecutive stored by the use of nodes where each node knows the address of the next one, letting us to insert and delete more efficiently at the cost of a low search time.
+
+8. Abstract data types are just our knowledge of what a data structure does instead of how it works.
+
+9. Arrays: Easy search; Hard insert because of fixed size. Linked list: Easy insert, delete; Hard search requires more memory. Stack: Can be implemented using linked lists and give us control of the top most element but it doesn't let us work with other elements below the top until we erase it. Queue: Similar to stacks but instead of LIFO it uses FIFO and requires control of over and under flow. Trees:  
