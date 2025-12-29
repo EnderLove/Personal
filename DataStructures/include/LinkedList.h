@@ -19,7 +19,7 @@ void sortList(struct Node *head);
 
 void addNode(struct Node **head, int position, struct Node **newNode);
 
-void deleteNode(struct Node **head, uint8_t position, uint8_t size); 
+void deleteNode(struct Node **head, uint8_t position); 
 
 void generateRandomList(struct Node **head, uint8_t *size); 
 

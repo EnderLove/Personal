@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <time.h>
 
 #include "../include/LinkedList.h"
@@ -7,7 +8,7 @@ void insert(struct Node **head, struct Node *temp, int value) {
     temp->data = value;
 
     if (head != NULL)
-        temp->next = *head;
+       temp->next = *head;
     else
         temp->next = NULL;
 
@@ -68,8 +69,8 @@ void addNode(struct Node **head, int position, struct Node **newNode)
     }
 }
 
-void deleteNode(struct Node **head, uint8_t position, uint8_t size) {
-    if (*head == NULL || position < 0) return; // If the list is empty and the position is less than 0 then return;
+void deleteNode(struct Node **head, uint8_t position) {
+    if (*head == NULL) return; // If the list is empty and the position is less than 0 then return;
 
     struct Node *temp = *head;
 
@@ -79,9 +80,15 @@ void deleteNode(struct Node **head, uint8_t position, uint8_t size) {
         return;
     }
 
-    for (int i = 0; temp != NULL && i < position - 1; i++){
+    for (uint8_t i = 0; temp != NULL && i < position - 1; i++){
         temp = temp->next; // While not in the end of the list and in a valid position then temp reach the position
     }
+
+    if (temp == NULL || temp->next == NULL) return;
+
+    struct Node *next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
 }
 
 void generateRandomList(struct Node **head, uint8_t *size){
@@ -166,7 +173,7 @@ int linkedListTest() {
                 printf("Set the position: ");
                 position = getInputUint8();
 
-                if (position > size || position < 0)
+                if (position > size)
                     break;
 
                 printf("Set the value: ");
@@ -182,7 +189,7 @@ int linkedListTest() {
                 printf("Delete Position: ");
                 position = getInputUint8();
 
-                deleteNode(&head, position, size);
+                deleteNode(&head, position);
                 break;
 
             case 3:

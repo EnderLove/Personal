@@ -63,7 +63,7 @@ int tempTest() {
                 printf("Delete Position: ");
                 position = getInputUint8();
 
-                deleteNode(&head, position, size);
+                deleteNode(&head, position);
                 break;
 
             case 3:
