@@ -1,19 +1,20 @@
-#include "LLFunctions.h"
+#include "../include/LLFunctions.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 int main() {
     srand(time(NULL));
     
-    const u_int8_t MAX_LIST_SIZE = 255;
+    const uint8_t MAX_LIST_SIZE = 255;
     
-    u_int8_t size      = 0;
-    u_int8_t value     = 0;
-    u_int8_t position  = 0;
-    u_int8_t userInput = 0;
+    uint8_t size      = 0;
+    uint8_t value     = 0;
+    uint8_t position  = 0;
+    uint8_t userInput = 0;
 
     struct Node *head = NULL;
 
@@ -23,10 +24,8 @@ int main() {
     if (userInput == 1) {
         generateRandomList(&head, &size);
     } else {
-        do{
-            printf("Insert the size of the list: \n"); // Set the size of the list
-            scanf("%hhu", &size);
-        } while (checkByteSize(size) != true);
+        printf("Insert the size of the list: \n"); // Set the size of the list
+        scanf("%hhu", &size);
 
         for (int i = size; i > 0; i--) {
             struct Node *temp = malloc(sizeof(struct Node));
@@ -39,7 +38,7 @@ int main() {
     }
     
     while (userInput != 5) {
-        system(clear);
+        system(CLEAR);
 
         printf("\n\n\t========================== LINKED LIST TESTING ==========================\n\n");
         printList(&head);

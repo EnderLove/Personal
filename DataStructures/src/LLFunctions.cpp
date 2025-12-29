@@ -1,21 +1,4 @@
-#ifndef LLFUNCTIONS_H
-#define LLFUNCTIONS_H
-
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-
-#ifdef _WIN32
-const char *clear = "cls";
-#else
-const char *clear = "clear";
-#endif
-
-struct Node {
-    int data;
-    struct Node *next;
-};
+#include "../include/LLFunctions.h"
 
 void insert(struct Node **head, struct Node *temp, int value) {
     temp->data = value;
@@ -82,7 +65,7 @@ void addNode(struct Node **head, int position, struct Node **newNode)
     }
 }
 
-void deleteNode(struct Node **head, int position, u_int8_t size) {
+void deleteNode(struct Node **head, int position, uint8_t size) {
     if (*head == NULL || position < 0) return; // If the list is empty and the position is less than 0 then return;
 
     struct Node *temp = *head;
@@ -96,54 +79,4 @@ void deleteNode(struct Node **head, int position, u_int8_t size) {
     for (int i = 0; temp != NULL && i < position - 1; i++){
         temp = temp->next; // While not in the end of the list and in a valid position then temp reach the position
     }
-    
-    if (temp == NULL || temp->next == NULL) return; // If position is out of scope then return
-
-    struct Node *next = temp->next->next;
-    free(temp->next);
-    temp->next = next;
 }
-
-void generateRandomList(struct Node **head, u_int8_t *size) {
-    int minRange = 0;
-    int maxRange = 0;
-    int value    = 0;
-
-    printf("Insert the size of the list: \n"); // Set the size of the list
-    scanf("%hhu", size);
-
-    do {
-        printf("Insert the minimal range of elements value: "); // minimal value in the list
-        scanf("%d", &minRange);
-        printf("Insert the max range of elements value: "); // maximal value range of values in the list
-        scanf("%d", &maxRange);
-
-        if (maxRange < minRange)
-            printf("\nMax Range must be greater than Min Range!!!\n\n");
-
-    } while (maxRange < minRange);
-
-    for (int i = *size; i > 0; i--) {
-        struct Node *temp = malloc(sizeof(struct Node));
-
-        value = (rand() % (maxRange - minRange)) + (minRange + 1); // value generator
-
-        insert(&(*head), temp, value);
-    }
-}
-
-void freeList(struct Node *head) {
-    struct Node *temp = NULL;
-
-    while (head != NULL) {
-        temp = head;
-        head = head->next;
-        free(temp);
-    }
-}
-
-bool checkByteSize(u_int8_t size){
-    return (size >= 0 && size <= 255)? true : false;
-}
-
-#endif // LLFUNCTIONS_H!
