@@ -3,8 +3,20 @@
 #include "../include/LinkedList.h"
 #include "../include/common.h"
 
+void printListTemp(struct Node **head) {
+    struct Node *it = *head;
+    int i = 0;
+
+    while (it != NULL) {
+        printf("\t|| Pos: %3d || Value: %3d || \n", i, it->data);
+        it = it->next;
+        i++;
+    }
+}
+
+
 int tempTest() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     
     uint8_t size      = 0;
     uint8_t value     = 0;
@@ -36,7 +48,7 @@ int tempTest() {
         system(CLEAR);
 
         printf("\n\n\t================== LIST TESTING ===================\n\n");
-        printList(&head);
+        printListTemp(&head);
 
         printf("\n===== OPTIONS =====\n1)Add Value\n2)Delete Value\n3)Sort List\n4)Regen List\n5)Exit\n");
         userInput = getInputUint8();

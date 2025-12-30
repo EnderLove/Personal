@@ -20,8 +20,7 @@ void printList(struct Node **head) {
     int i = 0;
 
     while (it != NULL) {
-        //printf("\tPos: %3d || Value: %3d || Address: %p || Next: %p\n", i, it->data, it, it->next);
-        printf("\t|| Pos: %3d || Value: %3d || \n", i, it->data);
+        printf("\tPos: %3d || Value: %3d || Address: %p || Next: %p\n", i, it->data, it, it->next);
         it = it->next;
         i++;
     }
