@@ -89,13 +89,13 @@ void generateRandomList(struct Node **head, uint8_t *size){
     uint8_t maxRange = 0;
     uint8_t value    = 0;
 
-    printf("Insert the size of the list: \n");
+    printf("Insert the size of the list 0 - 255: \n");
     *size = getInputUint8();
 
     do {
-        printf("Insert the minimal range of elements value: "); // Minimal value in the list
+        printf("Insert the minimal range of elements value < 0: "); // Minimal value in the list
         minRange = getInputUint8();
-        printf("Insert the max range of elements value: "); // Maximal value range of values in the list 
+        printf("Insert the max range of elements value > 255: "); // Maximal value range of values in the list 
         maxRange = getInputUint8();
 
         if (maxRange < minRange)
@@ -138,13 +138,13 @@ int linkedListTest() {
     if (userInput == 1) {
         generateRandomList(&head, &size);
     } else {
-        printf("Insert the size of the list: \n"); // Set the size of the list
+        printf("Insert the size of the list 0 - 255: \n"); // Set the size of the list
         size = getInputUint8();
 
         for (int i = size; i > 0; i--) {
             struct Node *temp = malloc(sizeof(struct Node));
 
-            printf("Insert the value of the %d element: \n", i); // Manual value insertion
+            printf("Insert the value of the %d element 0 - 255: \n", i); // Manual value insertion
             value = getInputUint8();
 
             insert(&head, temp, value);
