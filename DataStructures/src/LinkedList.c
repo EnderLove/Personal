@@ -54,13 +54,7 @@ void addNode(struct Node **head, int position, struct Node **newNode)
     struct Node *it = *head;
 
     if (position != 0) {
-        for (int i = 0; i < position - 1 && it != NULL; i++) {
-            it = it->next;
-        }
-        if (it == NULL) {
-            printf("OUT OF SCOPE!!!");
-            return;
-        }
+        for (int i = 0; i < position - 1 && it != NULL; i++) it = it->next;
         (*newNode)->next = it->next;
         it->next = *newNode;
     } else {
@@ -130,7 +124,7 @@ void freeList(struct Node *head){
 }
 
 int linkedListTest() {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     
     uint8_t size      = 0;
     uint8_t value     = 0;
@@ -172,8 +166,7 @@ int linkedListTest() {
                 printf("Set the position: ");
                 position = getInputUint8();
 
-                if (position > size)
-                    break;
+                if (position > size - 1) break; 
 
                 printf("Set the value: ");
                 value = getInputUint8();
@@ -184,10 +177,10 @@ int linkedListTest() {
 
                 addNode(&head, position, &temp);
                 break;
+
             case 2:
                 printf("Delete Position: ");
                 position = getInputUint8();
-
                 deleteNode(&head, position);
                 break;
 
