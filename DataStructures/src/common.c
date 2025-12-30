@@ -10,7 +10,7 @@ uint8_t getInputUint8(){
         while ((c = getchar()) != '\n' && c != EOF);
     }
 
-    char *endptr;
+    char *endptr = NULL;
     unsigned long val = strtoul(buffer, &endptr, 10);
 
     if (endptr != buffer && val <= 255){
@@ -18,4 +18,4 @@ uint8_t getInputUint8(){
     }
 
     return 0;
-} 
+}
