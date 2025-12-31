@@ -112,6 +112,20 @@ void generateRandomList(struct Node **head, uint8_t *size){
     }
 }
 
+struct Node *getLinkedList(uint8_t size){
+    struct Node *head = NULL;
+    uint8_t value = 0;
+    
+    while (size-- > 0){
+        struct Node *temp = malloc(sizeof(struct Node));
+
+        value = (rand() % 10);
+
+        insert(&head, temp, value);
+    }
+    return head;
+}
+
 void freeList(struct Node *head){
     struct Node *temp = NULL;
 
