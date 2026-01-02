@@ -36,6 +36,10 @@ struct Node *addTwoNumbers(struct Node *list1, struct Node *list2){
 
     while (sumLists > 0){
         
+        int digit = sumLists % 10;
+        sumLists /= 10;
+
+    
     }
     
     return 0;
