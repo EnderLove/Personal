@@ -4,7 +4,8 @@
 #include "../include/LinkedList.h"
 #include "../include/common.h"
 
-void insert(struct Node **head, struct Node *temp, int value) {
+void insert(struct Node **head, int value) {
+    struct Node *temp = malloc(sizeof(struct Node)); 
     temp->data = value;
 
     if (head != NULL)
@@ -104,11 +105,8 @@ void generateRandomList(struct Node **head, uint8_t *size){
     } while (maxRange < minRange);
 
     for (int i = *size; i > 0; i--){
-        struct Node *temp = malloc(sizeof(struct Node));
-
         value = (rand() % (maxRange - minRange)) + (minRange + 1);
-
-        insert(&(*head), temp, value);
+        insert(&(*head), value);
     }
 }
 
@@ -117,11 +115,8 @@ struct Node *getLinkedList(uint8_t size){
     uint8_t value = 0;
     
     while (size-- > 0){
-        struct Node *temp = malloc(sizeof(struct Node));
-
         value = (rand() % 10);
-
-        insert(&head, temp, value);
+        insert(&head, value);
     }
     return head;
 }
@@ -156,12 +151,11 @@ int linkedListTest() {
         size = getInputUint8();
 
         for (int i = size; i > 0; i--) {
-            struct Node *temp = malloc(sizeof(struct Node));
 
             printf("Insert the value of the %d element 0 - 255: \n", i); // Manual value insertion
             value = getInputUint8();
 
-            insert(&head, temp, value);
+            insert(&head, value);
         }
     }
     

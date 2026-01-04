@@ -14,7 +14,6 @@ void printListTemp(struct Node **head) {
     }
 }
 
-
 int tempTest() {
     srand((unsigned int)time(NULL));
     
@@ -40,7 +39,7 @@ int tempTest() {
             printf("Insert the value of the %d element: \n", i); // Manual value insertion
             value = getInputUint8();
 
-            insert(&head, temp, value);
+            insert(&head, value);
         }
     }
     

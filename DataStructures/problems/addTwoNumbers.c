@@ -9,20 +9,15 @@
 #include "../include/LinkedList.h"
 
 int getInvertNodeDigits(struct Node *list){
-    
-    struct Node *temp = list;
-    int invertDigits= 0; 
+    int inverDigits = 0;
     int i = 1;
 
-    while (temp != NULL){
-       invertDigits += (temp->data) * i;
-       temp = temp->next;
-       i *= 10;
+    while (list != NULL){
+        inverDigits += (list->data) * i;
+        list = list->next;
+        i *= 10;
     }
-    
-    printf("\nINVERT DIGITS: %d\n", invertDigits);
-
-    return invertDigits;
+    return inverDigits;
 }
 
 struct Node *addTwoNumbers(struct Node *list1, struct Node *list2){
@@ -32,6 +27,8 @@ struct Node *addTwoNumbers(struct Node *list1, struct Node *list2){
 
     int sumLists = listNum1 + listNum2;
     
+    printf("\n\tINVERT LIST 1: %d\n\tINVERT LIST 2: %d\n\tSUM LISTS: %d\n\n", listNum1, listNum2, sumLists);
+    
     struct Node* head = NULL;
 
     while (sumLists > 0){
@@ -39,10 +36,9 @@ struct Node *addTwoNumbers(struct Node *list1, struct Node *list2){
         int digit = sumLists % 10;
         sumLists /= 10;
 
-    
+        insert(&head, digit);    
     }
-    
-    return 0;
+    return head;
 }
 
 int main(){
@@ -59,8 +55,9 @@ int main(){
     printf("\n\t======== LIST 2 ========\n\n");
     printList(&list2);
     
-//    ans = addTwoNumbers(list1, list2);
-    getInvertNodeDigits(list1);
-
+    printf("\n\t======== ANS ========\n\n");
+    ans = addTwoNumbers(list1, list2);
+    printList(&ans);
+    
     return 0;
 }
