@@ -26,17 +26,25 @@ struct Node *addTwoNumbers(struct Node *list1, struct Node *list2){
     int listNum2 = getInvertNodeDigits(list2);
 
     int sumLists = listNum1 + listNum2;
-    
+
+    int i = 1;
+    int invertNum = 0;
+    int digits = 0;
+
     printf("\n\tINVERT LIST 1: %d\n\tINVERT LIST 2: %d\n\tSUM LISTS: %d\n\n", listNum1, listNum2, sumLists);
     
     struct Node* head = NULL;
-
+    
     while (sumLists > 0){
-        
-        int digit = sumLists % 10;
+        invertNum += (sumLists % 10) * i;
         sumLists /= 10;
+        i *= 10;
+    }
 
-        insert(&head, digit);    
+    while (invertNum > 0){
+        digits = (invertNum % 10);
+        invertNum /= 10;
+        insert(&head, digits);
     }
     return head;
 }

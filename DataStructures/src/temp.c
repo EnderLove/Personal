@@ -34,7 +34,6 @@ int tempTest() {
         size = getInputUint8();
 
         for (int i = size; i > 0; i--) {
-            struct Node *temp = malloc(sizeof(struct Node));
 
             printf("Insert the value of the %d element: \n", i); // Manual value insertion
             value = getInputUint8();
