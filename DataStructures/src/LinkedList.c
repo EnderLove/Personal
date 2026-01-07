@@ -90,7 +90,7 @@ void generateRandomList(struct Node **head, uint8_t *size){
     uint8_t maxRange = 0;
     uint8_t value    = 0;
 
-    printf("Insert the size of the list 0 - 255: \n");
+    printf("Insert the size of the list 0 - 255: ");
     *size = getInputUint8();
 
     do {
