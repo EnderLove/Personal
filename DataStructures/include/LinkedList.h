@@ -11,7 +11,7 @@ struct Node {
     struct Node *next;
 };
 
-void insert(struct Node **head, int value);           // Creates a Node at the beginning for LL generation
+void insert(struct Node **head, int value);                              // Creates a Node at the beginning for LL generation
 
 void printList(struct Node **head);                                      // Shows the LL in the screen 
 
