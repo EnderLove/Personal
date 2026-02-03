@@ -1,0 +1,2 @@
+/usr/bin/ar qc libds_lib.a CMakeFiles/ds_lib.dir/src/main.cpp.o CMakeFiles/ds_lib.dir/src/stacklib.cpp.o
+/usr/bin/ranlib libds_lib.a
