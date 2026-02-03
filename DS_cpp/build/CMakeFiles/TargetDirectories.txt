@@ -1,4 +1,0 @@
-/home/ender/Projects/Temp/Personal/DS_cpp/build/CMakeFiles/ds_lib.dir
-/home/ender/Projects/Temp/Personal/DS_cpp/build/CMakeFiles/DataStructures.dir
-/home/ender/Projects/Temp/Personal/DS_cpp/build/CMakeFiles/edit_cache.dir
-/home/ender/Projects/Temp/Personal/DS_cpp/build/CMakeFiles/rebuild_cache.dir
